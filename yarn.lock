@@ -954,6 +954,14 @@
     "@vssue/utils" "^1.4.0"
     axios "^0.18.1"
 
+"@vssue/api-github-v4@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.npm.taobao.org/@vssue/api-github-v4/download/@vssue/api-github-v4-1.4.0.tgz#30defd2220ff50e5ed4c50159e42eba52b004748"
+  integrity sha1-MN79IiD/UOXtTFAVnkLrpSsAR0g=
+  dependencies:
+    "@vssue/utils" "^1.4.0"
+    axios "^0.18.1"
+
 "@vssue/utils@^1.4.0":
   version "1.4.0"
   resolved "https://registry.npm.taobao.org/@vssue/utils/download/@vssue/utils-1.4.0.tgz#3cc2fd8492a3409e343289981e2209b6ca2f8313"

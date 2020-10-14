@@ -4,15 +4,17 @@ module.exports = {
     plugins: {
         '@vssue/vuepress-plugin-vssue': {
             // set `platform` rather than `api`
-            platform: 'github',
-
+            platform: 'github-v4',
+            locale: 'zh', // 语言
             // all other options of Vssue are allowed
-            owner: 'OWNER_OF_REPO',
-            repo: 'NAME_OF_REPO',
-            clientId: 'YOUR_CLIENT_ID',
-            clientSecret: 'YOUR_CLIENT_SECRET',
+            owner: 'zengh1',
+            repo: 'blog-vue',
+            clientId: 'fd8586c3fd6e80f1f40e',
+            clientSecret: '0ca47c67246a3fb8a21ad935db1096110e36db9f',
+            // 自动创建评论，默认是false，最好开启，这样首次进入页面的时候就不用去点击创建评论的按钮了。
+            autoCreateIssue:true
+            },
         },
-    },
     themeConfig: {
         // 导航栏上显示的链接
         nav: [
@@ -21,7 +23,7 @@ module.exports = {
                 link: '/',
             },
             {
-                text: 'Tags',
+                text: '标签',
                 link: '/tag/',
             },
             {
@@ -55,5 +57,29 @@ module.exports = {
                 },
             ],
         },
+        // 目录分类器
+        directories: [
+            {
+                id: 'linux',
+                dirname: '_linux',
+                path: '/linux/',
+                itemPermalink: '/linux/:year/:month/:day/:slug'
+            },
+            {
+                id: 'index',
+                dirname: '_posts',
+                path: '/',
+                itemPermalink: '/:year/:month/:day/:slug'
+            }
+        ],
+        // comment: {
+        //     service: 'vssue',
+        //     owner: 'zengh1',
+        //     repo: 'blog-vue',
+        //     clientId: 'fd8586c3fd6e80f1f40e',
+        //     clientSecret: '0ca47c67246a3fb8a21ad935db1096110e36db9f',
+        // }
     }
 }
+
+

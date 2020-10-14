@@ -1,7 +1,7 @@
 {
-  "name": "blog-vuepress",
-  "version": "1.0.0",
-  "main": "index.js",
+  "name": "blog",
+  "version": "",
+  "main": "",
   "license": "MIT",
   "devDependencies": {
     "@vuepress/theme-blog": "^2.3.2",
@@ -13,6 +13,10 @@
   },
   "dependencies": {
     "@vssue/api-github-v3": "^1.4.4",
+    "@vssue/api-github-v4": "^1.4.0",
     "@vssue/vuepress-plugin-vssue": "^1.4.6"
-  }
+  },
+  "description": "blog",
+  "repository": "https://github.com/zengh1/blog-vue.git",
+  "author": "zh <im.zengh@gmail.com>"
 }
