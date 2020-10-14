@@ -1,0 +1,18 @@
+{
+  "name": "blog-vuepress",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@vuepress/theme-blog": "^2.3.2",
+    "vuepress": "^1.7.0"
+  },
+  "scripts": {
+    "dev": "vuepress dev blog",
+    "build": "vuepress build blog"
+  },
+  "dependencies": {
+    "@vssue/api-github-v3": "^1.4.4",
+    "@vssue/vuepress-plugin-vssue": "^1.4.6"
+  }
+}
