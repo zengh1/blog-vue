@@ -30,6 +30,14 @@ module.exports = {
                 text: 'linux',
                 link: '/linux/',
             },
+            {
+                text: 'issues',
+                link: '/issues/',
+            },
+            {
+                text: '数据结构/算法',
+                link: '/dsal/',
+            }
         ],
 
         // 底部栏
@@ -70,15 +78,20 @@ module.exports = {
                 dirname: '_posts',
                 path: '/',
                 itemPermalink: '/:year/:month/:day/:slug'
+            },
+            {
+                id: 'issues',
+                dirname: '_issues',
+                path: '/issues/',
+                itemPermalink: '/issues/:year/:month/:day/:slug'
+            },
+            {
+                id: 'dsal',
+                dirname: '_dsal',
+                path: '/dsal/',
+                itemPermalink: '/dsal/:year/:month/:day/:slug'
             }
         ],
-        // comment: {
-        //     service: 'vssue',
-        //     owner: 'zengh1',
-        //     repo: 'blog-vue',
-        //     clientId: 'fd8586c3fd6e80f1f40e',
-        //     clientSecret: '0ca47c67246a3fb8a21ad935db1096110e36db9f',
-        // }
     }
 }
 
