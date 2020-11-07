@@ -37,6 +37,10 @@ module.exports = {
             {
                 text: '数据结构/算法',
                 link: '/dsal/',
+            },
+            {
+                text: '放松一下',
+                link: '/relax/',
             }
         ],
 
@@ -90,6 +94,12 @@ module.exports = {
                 dirname: '_dsal',
                 path: '/dsal/',
                 itemPermalink: '/dsal/:year/:month/:day/:slug'
+            },
+            {
+                id: 'relax',
+                dirname: '_relax',
+                path: '/relax/',
+                itemPermalink: '/relax/:year/:month/:day/:slug'
             }
         ],
     }
