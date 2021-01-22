@@ -1,6 +1,7 @@
 module.exports = {
     title: 'Blog', // Title for the site. This will be displayed in the navbar.
     theme: '@vuepress/theme-blog',
+    //base: '/blog-vue/',
     plugins: {
         '@vssue/vuepress-plugin-vssue': {
             // set `platform` rather than `api`
@@ -37,6 +38,14 @@ module.exports = {
             {
                 text: '数据结构/算法',
                 link: '/dsal/',
+            },
+            {
+                text: '计算机基础',
+                link: '/cs/',
+            },
+            {
+                text: '语言',
+                link: '/lang/',
             },
             {
                 text: '放松一下',
@@ -96,10 +105,22 @@ module.exports = {
                 itemPermalink: '/dsal/:year/:month/:day/:slug'
             },
             {
+                id: 'cs',
+                dirname: '_cs',
+                path: '/cs/',
+                itemPermalink: '/cs/:year/:month/:day/:slug'
+            },
+            {
                 id: 'relax',
                 dirname: '_relax',
                 path: '/relax/',
                 itemPermalink: '/relax/:year/:month/:day/:slug'
+            },
+            {
+                id: 'lang',
+                dirname: '_lang',
+                path: '/lang/',
+                itemPermalink: '/lang/:year/:mouth/:day/:slug'
             }
         ],
     }
