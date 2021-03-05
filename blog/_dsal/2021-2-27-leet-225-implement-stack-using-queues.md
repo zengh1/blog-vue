@@ -58,7 +58,61 @@ myStack.empty(); // 返回 False
 进阶：你能否实现每种操作的均摊时间复杂度为 O(1) 的栈？换句话说，执行 n 个操作的总时间复杂度 O(n) ，尽管其中某个操作可能需要比其他操作更长的时间。你可以使用两个以上的队列。
 
 ## 方法1 一个队列实现
+具体思路：
+push 时，先将元素正常 push 到队尾，再将之前的所有元素执行 **1.出队**、**2.入队** 操作
+
+代码如下：
+```go
+type MyStack struct {
+    Queue *list.List
+}
 
 
+/** Initialize your data structure here. */
+func Constructor() MyStack {
+    return MyStack{
+        Queue: list.New(),
+    }
+}
+
+
+/** Push element x onto stack. */
+func (this *MyStack) Push(x int)  {
+    q := this.Queue
+    _len := q.Len()
+    q.PushBack(x)
+    for i := 0; i < _len; i++ {
+        q.PushBack(q.Remove(q.Front()) )
+    }
+}
+
+
+/** Removes the element on top of the stack and returns that element. */
+func (this *MyStack) Pop() int {
+    return this.Queue.Remove(this.Queue.Front()).(int)
+}
+
+
+/** Get the top element. */
+func (this *MyStack) Top() int {
+    return this.Queue.Front().Value.(int)
+}
+
+
+/** Returns whether the stack is empty. */
+func (this *MyStack) Empty() bool {
+    return this.Queue.Len() == 0
+}
+
+
+/**
+ * Your MyStack object will be instantiated and called as such:
+ * obj := Constructor();
+ * obj.Push(x);
+ * param_2 := obj.Pop();
+ * param_3 := obj.Top();
+ * param_4 := obj.Empty();
+ */
+```
 
 <Vssue :title="$title" />
