@@ -8,7 +8,7 @@
     
     <meta name="description" content="">
     
-    <link rel="preload" href="/assets/css/0.styles.1866bcf8.css" as="style"><link rel="preload" href="/assets/js/app.251d51c0.js" as="script"><link rel="preload" href="/assets/js/9.087ddb0c.js" as="script"><link rel="preload" href="/assets/js/18.2f4bf615.js" as="script"><link rel="preload" href="/assets/js/4.6ad96edb.js" as="script"><link rel="prefetch" href="/assets/js/10.cae0df14.js"><link rel="prefetch" href="/assets/js/11.ea7a06b0.js"><link rel="prefetch" href="/assets/js/12.763a41e1.js"><link rel="prefetch" href="/assets/js/13.62013e68.js"><link rel="prefetch" href="/assets/js/14.eb85a8bc.js"><link rel="prefetch" href="/assets/js/15.5752b534.js"><link rel="prefetch" href="/assets/js/16.d443eac1.js"><link rel="prefetch" href="/assets/js/17.2ec50717.js"><link rel="prefetch" href="/assets/js/19.8886d931.js"><link rel="prefetch" href="/assets/js/20.b60a2806.js"><link rel="prefetch" href="/assets/js/21.6050635a.js"><link rel="prefetch" href="/assets/js/22.e2ca3f0e.js"><link rel="prefetch" href="/assets/js/23.93264d05.js"><link rel="prefetch" href="/assets/js/24.aac60054.js"><link rel="prefetch" href="/assets/js/25.0c4fa2a4.js"><link rel="prefetch" href="/assets/js/26.224c8ff2.js"><link rel="prefetch" href="/assets/js/27.993f53c4.js"><link rel="prefetch" href="/assets/js/28.21787e9a.js"><link rel="prefetch" href="/assets/js/3.f2ef4df9.js"><link rel="prefetch" href="/assets/js/5.cc54963f.js"><link rel="prefetch" href="/assets/js/6.5ce85d98.js"><link rel="prefetch" href="/assets/js/7.4b379cca.js"><link rel="prefetch" href="/assets/js/8.863931e1.js"><link rel="prefetch" href="/assets/js/vuejs-paginate.342f0bca.js">
+    <link rel="preload" href="/assets/css/0.styles.1866bcf8.css" as="style"><link rel="preload" href="/assets/js/app.e1bf16f2.js" as="script"><link rel="preload" href="/assets/js/9.161eabb2.js" as="script"><link rel="preload" href="/assets/js/20.85222958.js" as="script"><link rel="preload" href="/assets/js/4.568aecd8.js" as="script"><link rel="prefetch" href="/assets/js/10.f4c965d3.js"><link rel="prefetch" href="/assets/js/11.7cc750e8.js"><link rel="prefetch" href="/assets/js/12.0294e21e.js"><link rel="prefetch" href="/assets/js/13.6155e5d7.js"><link rel="prefetch" href="/assets/js/14.daa03e2f.js"><link rel="prefetch" href="/assets/js/15.9038c344.js"><link rel="prefetch" href="/assets/js/16.1ec95a44.js"><link rel="prefetch" href="/assets/js/17.8a468a5e.js"><link rel="prefetch" href="/assets/js/18.91670e7f.js"><link rel="prefetch" href="/assets/js/19.e61d9fa3.js"><link rel="prefetch" href="/assets/js/21.4388c19f.js"><link rel="prefetch" href="/assets/js/22.626f1177.js"><link rel="prefetch" href="/assets/js/23.f904be73.js"><link rel="prefetch" href="/assets/js/24.d3a7db17.js"><link rel="prefetch" href="/assets/js/25.55a68e90.js"><link rel="prefetch" href="/assets/js/26.c767df78.js"><link rel="prefetch" href="/assets/js/27.9c7de6cc.js"><link rel="prefetch" href="/assets/js/28.9191ebf0.js"><link rel="prefetch" href="/assets/js/29.45be56b4.js"><link rel="prefetch" href="/assets/js/3.b2d337bf.js"><link rel="prefetch" href="/assets/js/30.fe40f1e3.js"><link rel="prefetch" href="/assets/js/31.633262f9.js"><link rel="prefetch" href="/assets/js/32.968c31fb.js"><link rel="prefetch" href="/assets/js/5.98485bed.js"><link rel="prefetch" href="/assets/js/6.05a0d140.js"><link rel="prefetch" href="/assets/js/7.e61683fa.js"><link rel="prefetch" href="/assets/js/8.be03ada5.js"><link rel="prefetch" href="/assets/js/vuejs-paginate.4dea3cd2.js">
     <link rel="stylesheet" href="/assets/css/0.styles.1866bcf8.css">
   </head>
   <body>
@@ -27,6 +27,37 @@
           </a><a href="/tag/算法">
             算法
           </a><a href="/tag/go" aria-current="page" class="router-link-exact-active router-link-active">
+            go
+          </a></div></footer></article><article itemprop="blogPost" itemscope="itemscope" itemtype="https://schema.org/BlogPosting" class="ui-post"><meta itemprop="mainEntityOfPage" content="/lang/2020/:mouth/24/go-container-list-source-code/"> <header itemprop="name headline" class="ui-post-title"><a href="/lang/2020/:mouth/24/go-container-list-source-code/" class="nav-link">go container/list 源码分析</a></header> <p itemprop="description" class="ui-post-summary">
+        
+
+// List代表一个双向链表。List零值为一个空的、可用的链表。
+type List struct {
+  // 哨兵节点，连接链表的头节点和尾结点，root.next 连接的是第一个结点，root.prev 连接的是最后一	// 个结点
+  root Element
+  // 当前列表长度，不包括哨兵节点
+	len  int
+}
+
+初始化
+ ...
+      </p> <footer><div itemprop="publisher author" itemtype="http://schema.org/Person" itemscope="itemscope" class="ui-post-meta ui-post-author"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-navigation"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg> <span itemprop="name">zz</span> <span itemprop="address">
+              in Beijing
+          </span></div> <div class="ui-post-meta ui-post-date"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> <time pubdate itemprop="datePublished" datetime="2020-02-24T00:00:00.000Z">
+            Mon Feb 24 2020
+          </time></div> <div itemprop="keywords" class="ui-post-meta ui-post-tag"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg> <a href="/tag/go" aria-current="page" class="router-link-exact-active router-link-active">
+            go
+          </a></div></footer></article><article itemprop="blogPost" itemscope="itemscope" itemtype="https://schema.org/BlogPosting" class="ui-post"><meta itemprop="mainEntityOfPage" content="/lang/2020/:mouth/24/go-container-list-swap/"> <header itemprop="name headline" class="ui-post-title"><a href="/lang/2020/:mouth/24/go-container-list-swap/" class="nav-link">go 交换 container/list 的值</a></header> <p itemprop="description" class="ui-post-summary">
+        
+
+在 LeetCode 255.用队列实现栈 这道题里，需要用到两个队列来实现一个栈，并且在算法流程中，需要交换这两个队列的内容，例如：队列 A  =&gt; [1, 2, 3]，队列 B =&gt; [555]，交换后：A =&gt; [555]，B =&gt; [1, 2, 3]。
+
+go 标准库中并没有提供队列的实现，但是提供了 container/list 这样一个双向链表，所以可以用 list 来模拟 ...
+      </p> <footer><div itemprop="publisher author" itemtype="http://schema.org/Person" itemscope="itemscope" class="ui-post-meta ui-post-author"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-navigation"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg> <span itemprop="name">zz</span> <span itemprop="address">
+              in Beijing
+          </span></div> <div class="ui-post-meta ui-post-date"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> <time pubdate itemprop="datePublished" datetime="2020-02-24T00:00:00.000Z">
+            Mon Feb 24 2020
+          </time></div> <div itemprop="keywords" class="ui-post-meta ui-post-tag"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg> <a href="/tag/go" aria-current="page" class="router-link-exact-active router-link-active">
             go
           </a></div></footer></article><article itemprop="blogPost" itemscope="itemscope" itemtype="https://schema.org/BlogPosting" class="ui-post"><meta itemprop="mainEntityOfPage" content="/lang/2020/:mouth/24/go-post-request/"> <header itemprop="name headline" class="ui-post-title"><a href="/lang/2020/:mouth/24/go-post-request/" class="nav-link">go 发送 post 请求</a></header> <p itemprop="description" class="ui-post-summary">
         
@@ -49,6 +80,6 @@ req, er ...
         </a></li><li class="contact-item" data-v-fdbf4940><a href="https://github.com/vuejs/vuepress" target="_blank" rel="noopener noreferrer" class="nav-link external" data-v-fdbf4940><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter" data-v-fdbf4940><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" data-v-fdbf4940></path></svg>
           
         </a></li></ul></div> <div class="footer-right-wrap" data-v-fdbf4940><ul class="copyright" data-v-fdbf4940><li class="copyright-item" data-v-fdbf4940><a href="https://policies.google.com/privacy?hl=en-US" target="_blank" rel="noopener noreferrer" class="nav-link external" data-v-fdbf4940>Privacy Policy</a></li><li class="copyright-item" data-v-fdbf4940><a href="/tag/go/.html" class="nav-link" data-v-fdbf4940>MIT Licensed | Copyright © 2018-present Vue.js</a></li></ul></div></footer></div><div class="global-ui"></div></div>
-    <script src="/assets/js/app.251d51c0.js" defer></script><script src="/assets/js/9.087ddb0c.js" defer></script><script src="/assets/js/18.2f4bf615.js" defer></script><script src="/assets/js/4.6ad96edb.js" defer></script>
+    <script src="/assets/js/app.e1bf16f2.js" defer></script><script src="/assets/js/9.161eabb2.js" defer></script><script src="/assets/js/20.85222958.js" defer></script><script src="/assets/js/4.568aecd8.js" defer></script>
   </body>
 </html>
