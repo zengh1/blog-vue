@@ -7,11 +7,6 @@ author: zz
 location: Beijing
 ---
 
-
-# LeetCode 165 --- 比较版本号
-
-
-
 ## 题目描述
 
 > 给你两个版本号 version1 和 version2 ，请你比较它们。
@@ -142,7 +137,7 @@ func compareVersion(version1 string, version2 string) int {
     for p1 < max || p2 < max {
         var v1, v2 int
       	// 使用 while 来循环读取一个小版本号（例如 1.111 中的 1 和 111 就是小版本号），
- 				// 遇到 . 停止，此时 vv1, vv2 的值即是小版本号，vv1 和 vv2 定义在外层 for 内，
+ 		// 遇到 . 停止，此时 vv1, vv2 的值即是小版本号，vv1 和 vv2 定义在外层 for 内，
         // 每次比较后都会清零
         for p1 < l1 && version1[p1] != '.' {
             v1 = v1*10 + int(version1[p1]) - '0'
@@ -166,6 +161,77 @@ func compareVersion(version1 string, version2 string) int {
 }
 ```
 
+## 错误记录
 
+### 1. 超出时间限制
+
+```go
+    func compareVersion(version1 string, version2 string) int {
+    p1, p2 := 0, 0
+
+    for p1 < len(version1) || p2 < len(version2) {
+        v1, v2 := 0, 0
+        for p1 < len(version1) && version1[p1] != '.' {
+            v, _ := strconv.Atoi(string(version1[p1]))
+            v1 += v
+            p1++
+        }
+        for p2 < len(version2) && version1[p2] != '.' {
+            v, _ := strconv.Atoi(string(version1[p2]))
+            v2 += v
+            p2++
+        }
+        
+        if v1 > v2 {
+            return 1
+        } else if v1 < v2 {
+            return -1
+        }
+    }
+    return 0
+}
+```
+这里超时的原因是末尾没有 p1++ 和 p2++，当 p1 和 p2 都为 '.' 时，p1 和 p2 将不会有任何改变，这会导致 while 条件一直满足，从而陷入死循环。
+
+所以末尾的 p1++ 和 p2++ 就是用来保证当 p1，p2 都为 '.' 时仍然会移动，防止死循环的发生。
+
+### 2. 解答错误
+
+```go
+    func compareVersion(version1 string, version2 string) int {
+    p1, p2 := 0, 0
+
+    for p1 < len(version1) || p2 < len(version2) {
+        v1, v2 := 0, 0
+        for p1 < len(version1) && version1[p1] != '.' {
+            v, _ := strconv.Atoi(string(version1[p1]))
+            v1 += v
+            p1++
+        }
+        for p2 < len(version2) && version2[p2] != '.' {
+            v, _ := strconv.Atoi(string(version2[p2]))
+            v2 += v
+            p2++
+        }
+        
+        if v1 > v2 {
+            return 1
+        } else if v1 < v2 {
+            return -1
+        }
+        p1++
+        p2++
+    }
+    return 0
+}
+```
+
+测试用例：
+
+```
+    "1.1"
+    "1.10"
+```
+这里错误的原因是因为对于小版本号只是单纯的相加操作，对于 1.10 的第二个小版本而言，结果为 1 + 0 = 1，从而导致错误结果 1.1 = 1.10，解决方法是将对应小版本号从 string 转为 int，具体方法是 v = v*10 + s[i] - '0'。
 
 <Vssue :title="$title" />

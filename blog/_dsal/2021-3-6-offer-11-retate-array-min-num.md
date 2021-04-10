@@ -7,8 +7,6 @@ author: zz
 location: Beijing
 ---
 
-# 剑指 Offer 11. 旋转数组的最小数字
-
 ## 题目描述
 
 > 把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。输入一个递增排序的数组的一个旋转，输出旋转数组的最小元素。例如，数组 [3,4,5,1,2] 为 [1,2,3,4,5] 的一个旋转，该数组的最小值为1。  
@@ -49,8 +47,8 @@ location: Beijing
 如果中位值 **小于** right 的值，说明在右边数组
 
 例如：
-[4, 5, 1, 2, 3]，中位值为 1，小于 right 3，所以在左边数组
-[3, 4, 5, 1, 2]，中位值为 5，小于 right 2，所以在右边数组
+[4, 5, 1, 2, 3]，中位值为 1，小于 right 3，所以在右边数组
+[3, 4, 5, 1, 2]，中位值为 5，大于 right 2，所以在左边数组
 
 
 
@@ -58,7 +56,9 @@ location: Beijing
 
 因为左数组要大于右数组，所以：
 
-如果中位在左数组，那么可以直接去掉左数组，例如 [4, 5, **1**, 2, 3]，左数组 [4, 5] 是要大于右数组 [1, 2, 3] 的，所以可以直接去掉 4, 5 这两个元素。
+~~如果中位在右数组，那么可以直接去掉左数组，例如 [4, 5, **1**, 2, 3]，左数组 [4, 5] 是要大于右数组 [1, 2, 3] 的，所以可以直接去掉 4, 5 这两个元素，但其本身有可能是最小元素，所以不能去除。~~
+
+如果中位在左数组，那么可以去掉其左边的所有元素以及它自己，因为左数组是要大于右数组的，例如 [3, 4, **5**, 1, 2]，可以直接将 3，4，5全部去掉  
 
 如果中位在右数组，那么可以去掉其右边的所有元素，因为这些元素是一定比它大的，例如 [5, 1, **2**, 3, 4]，中位所处数组为 [1, 2, 3, 4]，它右边的 3 和 4 可以直接去除掉。
 
@@ -73,23 +73,23 @@ location: Beijing
 
 图片来源：https://leetcode-cn.com/problems/xuan-zhuan-shu-zu-de-zui-xiao-shu-zi-lcof/solution/mian-shi-ti-11-xuan-zhuan-shu-zu-de-zui-xiao-shu-3/
 
-![offer11_img1](/Users/zz/WebstormProjects/blog-vuepress/blog/.vuepress/public/offer11_img1.jpg)
+![offer11_img1](../.vuepress/public/offer11_img1.jpg)
 
-![offer11_img2](/Users/zz/WebstormProjects/blog-vuepress/blog/.vuepress/public/offer11_img2.jpg)
+![offer11_img2](../.vuepress/public/offer11_img2.jpg)
 
-![offer11_img3](/Users/zz/WebstormProjects/blog-vuepress/blog/.vuepress/public/offer11_img3.jpg)
+![offer11_img3](../.vuepress/public/offer11_img3.jpg)
 
-![offer11_img4](/Users/zz/WebstormProjects/blog-vuepress/blog/.vuepress/public/offer11_img4.jpg)
+![offer11_img4](../.vuepress/public/offer11_img4.jpg)
 
-![offer11_img5](/Users/zz/WebstormProjects/blog-vuepress/blog/.vuepress/public/offer11_img5.jpg)
+![offer11_img5](../.vuepress/public/offer11_img5.jpg)
 
-![offer11_img6](/Users/zz/WebstormProjects/blog-vuepress/blog/.vuepress/public/offer11_img6.jpg)
+![offer11_img6](../.vuepress/public/offer11_img6.jpg)
 
-![offer11_img7](/Users/zz/WebstormProjects/blog-vuepress/blog/.vuepress/public/offer11_img7.jpg)
+![offer11_img7](../.vuepress/public/offer11_img7.jpg)
 
-![offer11_img8](/Users/zz/WebstormProjects/blog-vuepress/blog/.vuepress/public/offer11_img8.jpg)
+![offer11_img8](../.vuepress/public/offer11_img8.jpg)
 
-![offer11_img9](/Users/zz/WebstormProjects/blog-vuepress/blog/.vuepress/public/offer11_img9.jpg)
+![offer11_img9](../.vuepress/public/offer11_img9.jpg)
 
 
 
