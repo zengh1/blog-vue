@@ -1,12 +1,12 @@
 ---
-title: go container/list 源码分析
+title: go container/list 源码分析【未完】
 date: 2020-02-24
 tags: 
   - go
+  - 源码
 author: zz
 location: Beijing  
 ---
-
 
 
 ## List

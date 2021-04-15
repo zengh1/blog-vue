@@ -1,5 +1,5 @@
 ---
-title: leetcode 225. 用队列实现栈
+title: leetcode 225. 用队列实现栈【未完】
 data: 2021-2-27
 tags: 
   - 栈
